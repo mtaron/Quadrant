@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AcceptButton.Label" xml:space="preserve">
+    <value>Accept</value>
+    <comment>Label for accept button in the function edit bar.</comment>
+  </data>
+  <data name="BottomLeft" xml:space="preserve">
+    <value>Bottom left</value>
+    <comment>An option for label placement in the print dialog.</comment>
+  </data>
+  <data name="BottomRight" xml:space="preserve">
+    <value>Bottom right</value>
+    <comment>An option for label placement in the print dialog.</comment>
+  </data>
+  <data name="DeleteConfirmationDialog.PrimaryButtonText" xml:space="preserve">
+    <value>Delete</value>
+    <comment>Label for okay button used in delete confirmation dialog.</comment>
+  </data>
+  <data name="CancelButton.Label" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>Label for cancel button in the function edit bar.</comment>
+  </data>
+  <data name="RecenterFlyoutItem.Text" xml:space="preserve">
+    <value>Recenter</value>
+    <comment>Context menu item for recentering on a particular function.</comment>
+  </data>
+  <data name="DeleteButton.Label" xml:space="preserve">
+    <value>Delete</value>
+    <comment>Label for delete button in the function edit bar.</comment>
+  </data>
+  <data name="DeleteFlyoutItem.Text" xml:space="preserve">
+    <value>Delete</value>
+    <comment>Label for delete context menu item.</comment>
+  </data>
+  <data name="DeleteMessage" xml:space="preserve">
+    <value>Deleting &lt;Bold&gt;{0}&lt;/Bold&gt; will also delete dependent functions:</value>
+    <comment>Warning shown when deleting a function that multiple functions depend on.
+{0} is the name of the function being deleted.
+This string is followed by a bulleted list of the additionals functions that will be deleted.</comment>
+  </data>
+  <data name="DeleteSingleMessage" xml:space="preserve">
+    <value>Deleting &lt;Bold&gt;{0}&lt;/Bold&gt; will also delete dependent function &lt;Bold&gt;{1}&lt;/Bold&gt;.</value>
+    <comment>Warning shown when deleting a function that one other function depend on.
+{0} is the function being deleted. {1} is the name of the function that depends on {1}.</comment>
+  </data>
+  <data name="EditBar.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Edit</value>
+    <comment>Automation name for function edit bar.</comment>
+  </data>
+  <data name="FeedbackButton.Label" xml:space="preserve">
+    <value>Feedback</value>
+    <comment>Menu item for shown in "More" menu.</comment>
+  </data>
+  <data name="FullPage" xml:space="preserve">
+    <value>Full page</value>
+    <comment>A print size option.</comment>
+  </data>
+  <data name="FunctionBar.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Commands</value>
+    <comment>Automation name for the main command bar.</comment>
+  </data>
+  <data name="FunctionInput.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Function</value>
+    <comment>Automation name for the function input text block.</comment>
+  </data>
+  <data name="Graph.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Graph</value>
+    <comment>Automation name for the graph control.</comment>
+  </data>
+  <data name="GraphControlTypeName" xml:space="preserve">
+    <value>Graph</value>
+    <comment>Name of custom automation peer for FunctionGraph.</comment>
+  </data>
+  <data name="GraphSize" xml:space="preserve">
+    <value>Graph size</value>
+    <comment>Name of a print option. Possible values are "Full page" and "Window"</comment>
+  </data>
+  <data name="LabelLocation" xml:space="preserve">
+    <value>Label location</value>
+    <comment>Name of a printing option. Possible values are: Top left, Top Rright, Bottom left, Bottom right, and None</comment>
+  </data>
+  <data name="NewButton.Label" xml:space="preserve">
+    <value>New Function</value>
+    <comment>Label of New Function button on the primary command bar.</comment>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>None</value>
+    <comment>Print option label.</comment>
+  </data>
+  <data name="DeleteConfirmationDialog.CloseButtonText" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>Text for cancel button in delete confirmation dialog.</comment>
+  </data>
+  <data name="PrintButton.Label" xml:space="preserve">
+    <value>Print</value>
+    <comment>Label for the print menu item in the "More" menu.</comment>
+  </data>
+  <data name="PrintTaskTitle" xml:space="preserve">
+    <value>Quadrant Graph</value>
+    <comment>Title of the print job.</comment>
+  </data>
+  <data name="RecenterButton.Label" xml:space="preserve">
+    <value>Recenter</value>
+    <comment>Label for the recenter button in the primary command bar.</comment>
+  </data>
+  <data name="SettingsButton.Label" xml:space="preserve">
+    <value>Settings</value>
+    <comment>Label for the settings button in the primary command bar.</comment>
+  </data>
+  <data name="ScaleXSlider.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Horizontal scale</value>
+    <comment>Automation name of the X scale slider.</comment>
+  </data>
+  <data name="ScaleYSlider.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Vertical scale</value>
+    <comment>Automation name of the Y scale slider.</comment>
+  </data>
+  <data name="ShareButton.Label" xml:space="preserve">
+    <value>Share</value>
+    <comment>Label for the share button in the primary command bar.</comment>
+  </data>
+  <data name="ShareTitle" xml:space="preserve">
+    <value>Graph</value>
+    <comment>Title of the share package.</comment>
+  </data>
+  <data name="TopLeft" xml:space="preserve">
+    <value>Top left</value>
+    <comment>Print label location option.</comment>
+  </data>
+  <data name="TopRight" xml:space="preserve">
+    <value>Top right</value>
+    <comment>Print label location option.</comment>
+  </data>
+  <data name="AngleToggle.OffContent" xml:space="preserve">
+    <value>Degree</value>
+    <comment>Settings toggle for switching to degrees,</comment>
+  </data>
+  <data name="AngleToggle.OnContent" xml:space="preserve">
+    <value>Radian</value>
+    <comment>Settings toggle for switching to radians.</comment>
+  </data>
+  <data name="InkButton.Label" xml:space="preserve">
+    <value>Ink</value>
+    <comment>Label of the ink tools button in the primary command bar.</comment>
+  </data>
+  <data name="AppDescription" xml:space="preserve">
+    <value>A simple, high-performance graphing calculator with modern design.</value>
+    <comment>The description of the app in the package manifest.</comment>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>Quadrant</value>
+    <comment>Name of the app, shown through the OS (start menu, task manager, etc.)</comment>
+  </data>
+  <data name="LightTheme" xml:space="preserve">
+    <value>Light theme</value>
+    <comment>Menu item shown in "More" menu when in dark theme.</comment>
+  </data>
+  <data name="AboutButton.Label" xml:space="preserve">
+    <value>About</value>
+    <comment>Label for the about menu item in the "more" menu.</comment>
+  </data>
+  <data name="Copyright.Text" xml:space="preserve">
+    <value>Copyright © 2017-2018 Michael Taron – All rights reserved</value>
+    <comment>Copyright text for Quadrant</comment>
+  </data>
+  <data name="DarkTheme" xml:space="preserve">
+    <value>Dark theme</value>
+    <comment>Menu item shown in "More" menu when in light theme.</comment>
+  </data>
+  <data name="MathNet.Text" xml:space="preserve">
+    <value>Copyright © 2002-2015 Math.NET</value>
+    <comment>Copyright text for MathNET.Numerics</comment>
+  </data>
+  <data name="MathNetName.Text" xml:space="preserve">
+    <value>MathNET.Numerics</value>
+    <comment>Name of MathNet.Numerics package shown in About dialog.</comment>
+  </data>
+  <data name="RateButton.Content" xml:space="preserve">
+    <value>Rate this app</value>
+    <comment>Hyperlink to review this app in the Store.</comment>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version: {0}.{1}.{2}.{3}</value>
+    <comment>Version number in the About dialog</comment>
+  </data>
+  <data name="CreatedBy.Text" xml:space="preserve">
+    <value>Created by Michael Taron</value>
+    <comment>About dialog text</comment>
+  </data>
+  <data name="MITLicense.Text" xml:space="preserve">
+    <value>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</value>
+    <comment>Standard text for the MIT Software License.</comment>
+  </data>
+  <data name="Window" xml:space="preserve">
+    <value>Window</value>
+    <comment>Print size option.</comment>
+  </data>
+  <data name="RetryButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Retry function fit</value>
+    <comment>Automation name of retry button in function edit bar.</comment>
+  </data>
+  <data name="RetryButton.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Retry function fit</value>
+    <comment>Tooltip of retry button in function edit bar.</comment>
+  </data>
+  <data name="TelemetryToggleSwitch.Header" xml:space="preserve">
+    <value>Send anonymous usage data to help improve Quadrant.</value>
+    <comment>Text for telemetry toggle switch.</comment>
+  </data>
+  <data name="AboutPivot.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>About</value>
+    <comment>Automation name for the About pivot.</comment>
+  </data>
+  <data name="CopyrightPivotItem.Header" xml:space="preserve">
+    <value>Copyright</value>
+    <comment>Header for copyright info tab in the About dialog.</comment>
+  </data>
+  <data name="FunctionList.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Functions</value>
+    <comment>Automation name for the list of functions.</comment>
+  </data>
+  <data name="PrivacyPivotItem.Header" xml:space="preserve">
+    <value>Privacy</value>
+    <comment>Header for privacy info tab in the About dialog.</comment>
+  </data>
+  <data name="PrivacyPolicy.Text" xml:space="preserve">
+    <value>This app collects usage and performance telemetry and crash logs in order to improve. No user content such as the functions you create or personally identifiable information like name or email is collected and you can always turn off all telemetry using the toggle switch below.
+
+Example data collection and use:
+   • App launch and rendering performance statistics are collected to discover and diagnose performance problems.
+   • Command usage, such as function creation, changing scale, and printing is collected to understand how the app is being used so it can improved based on your needs.
+   • Crash logs are used to find and fix crashes.
+
+All data is collected and stored securely using Microsoft's HockeyApp service. Information is not shared with any other third party.
+
+For any questions regarding this policy, please contact support@quadrantapp.com.</value>
+    <comment>Privacy policy</comment>
+  </data>
+  <data name="ThirdPartyPivotItem.Header" xml:space="preserve">
+    <value>Third party notice</value>
+    <comment>Header for third party software in the About dialog.</comment>
+  </data>
+  <data name="ColorButton.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Change color</value>
+    <comment>Tooltip for the function button during edit</comment>
+  </data>
+  <data name="ColorFlyoutItem.Text" xml:space="preserve">
+    <value>Color</value>
+    <comment>Context menu item for changing the color of a particular function.</comment>
+  </data>
+</root>

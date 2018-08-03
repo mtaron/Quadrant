@@ -1,0 +1,58 @@
+﻿<UserControl
+    x:Class="Quadrant.Controls.FunctionLabel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Height="{ThemeResource AppBarThemeCompactHeight}"
+    MinWidth="{StaticResource CommandBarItemWidth}">
+
+    <Grid
+        x:Name="Root"
+        BorderThickness="{ThemeResource ListViewItemRevealBorderThemeThickness}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Normal"/>
+                <VisualState x:Name="PointerOver">
+                    <VisualState.Setters>
+                        <Setter Target="FunctionBackgroundBrush.Opacity" Value="{StaticResource FunctionLabelHoverOpacity}"/>
+                        <Setter Target="FunctionBorderBrush.Opacity" Value="{StaticResource FunctionLabelHoverOpacity}"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Pressed">
+                    <VisualState.Setters>
+                        <Setter Target="Root.(RevealBrush.State)" Value="Pressed"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid.Background>
+            <RevealBackgroundBrush
+                x:Name="FunctionBackgroundBrush"
+                Color="{x:Bind Function.Color, Mode=OneWay}"
+                Opacity="{StaticResource FunctionLabelRevealOpacity}"/>
+        </Grid.Background>
+
+        <Grid.BorderBrush>
+            <RevealBorderBrush
+                x:Name="FunctionBorderBrush"
+                Color="{x:Bind Function.Color, Mode=OneWay}"
+                Opacity="{StaticResource FunctionLabelRevealOpacity}"/>
+        </Grid.BorderBrush>
+        
+        <RichTextBlock
+            FontSize="{StaticResource CommandBarFontSize}"
+            IsTextSelectionEnabled="False"
+            TextAlignment="Center"
+            OpticalMarginAlignment="TrimSideBearings"
+            VerticalAlignment="Center"
+            CharacterSpacing="-10"
+            HorizontalAlignment="Center">
+            <Paragraph>
+                <Run>ƒ</Run>
+                <Run 
+                    Text="{x:Bind Function.Id, Mode=OneWay}"
+                    Typography.Variants="Subscript"/>
+            </Paragraph>
+        </RichTextBlock>
+    </Grid>
+</UserControl>

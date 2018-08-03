@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{195B2942-4CCF-421C-9B6A-8A83AFE5BC98}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Quadrant</RootNamespace>
+    <AssemblyName>Quadrant</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.17134.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.17134.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>15</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
+    <HockeyAppResourceId>837863c54ceb421380026282688dd7c8</HockeyAppResourceId>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <PackageCertificateThumbprint>F4732533DE6F3A0F6EF0CC283278C83C67C91750</PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>Quadrant_StoreKey.pfx</PackageCertificateKeyFile>
+    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+    <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
+    <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    <EnableGatekeeperAnalysis>false</EnableGatekeeperAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    <EnableGatekeeperAnalysis>false</EnableGatekeeperAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    <EnableGatekeeperAnalysis>false</EnableGatekeeperAnalysis>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="Package.StoreAssociation.xml" />
+    <None Include="Quadrant_StoreKey.pfx" />
+    <PRIResource Include="Strings\en-US\Resources.resw" />
+  </ItemGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AboutControl.xaml.cs">
+      <DependentUpon>AboutControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdapativeCommandBar.cs" />
+    <Compile Include="Controls\ColorControl.xaml.cs">
+      <DependentUpon>ColorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DeleteConfirmationDialog.xaml.cs">
+      <DependentUpon>DeleteConfirmationDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Functions\FunctionDataEventArgs.cs" />
+    <Compile Include="Graph\CoordinateControl.xaml.cs">
+      <DependentUpon>CoordinateControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Graph\FunctionGraphAutomationPeer.cs" />
+    <Compile Include="Ink\Fit\LeftShiftFit.cs" />
+    <Compile Include="Ink\Fit\ShiftFit.cs" />
+    <Compile Include="Ink\Fit\CenterShiftFit.cs" />
+    <Compile Include="Ink\Fit\IntersectionShiftFit.cs" />
+    <Compile Include="Ink\Fit\PolynomialFit.cs" />
+    <Compile Include="Ink\Fit\OscillationFit.cs" />
+    <Compile Include="Ink\Fit\NegativeLogFit.cs" />
+    <Compile Include="Ink\Fit\ReciprocalFit.cs" />
+    <Compile Include="Ink\Fit\FunctionFit.cs" />
+    <Compile Include="Ink\Fit\LinearFit.cs" />
+    <Compile Include="Ink\Fit\ConstantFit.cs" />
+    <Compile Include="Ink\Fit\LinearCombinationFit.cs" />
+    <Compile Include="Ink\StrokeFit.cs" />
+    <Compile Include="Ink\StrokeData.cs" />
+    <Compile Include="Ink\InkToFunction.cs" />
+    <Compile Include="Ink\TransformedStrokes.cs" />
+    <Compile Include="Functions\IFunction.cs" />
+    <Compile Include="Persistence\Deserializer.cs" />
+    <Compile Include="Persistence\Serializer.cs" />
+    <Compile Include="Persistence\SuspensionManager.cs" />
+    <Compile Include="Converters\ScaleConverter.cs" />
+    <Compile Include="Protocol\IProtocol.cs" />
+    <Compile Include="Protocol\ProtocolHandler.cs" />
+    <Compile Include="Telemetry\RecenterType.cs" />
+    <Compile Include="Utility\DispatcherHelper.cs" />
+    <Compile Include="Utility\FunctionExtensions.cs" />
+    <Compile Include="Controls\FunctionLabel.xaml.cs">
+      <DependentUpon>FunctionLabel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Graph\FunctionRenderer.cs" />
+    <Compile Include="Graph\GridRenderer.cs" />
+    <Compile Include="Graph\Transform.cs" />
+    <Compile Include="Telemetry\QuadrantEventSource.cs" />
+    <Compile Include="Telemetry\AppTelemetry.cs" />
+    <Compile Include="Telemetry\TelemetryMetrics.cs" />
+    <Compile Include="Telemetry\TelemetryEvents.cs" />
+    <Compile Include="Telemetry\TelemetryProperties.cs" />
+    <Compile Include="Graph\FunctionGraph.xaml.cs">
+      <DependentUpon>FunctionGraph.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Graph\Constants.cs" />
+    <Compile Include="Graph\IntersectionService.cs" />
+    <Compile Include="Graph\GraphPrinter.cs" />
+    <Compile Include="Utility\AppUtilities.cs" />
+    <Compile Include="Utility\BrushExtensions.cs" />
+    <Compile Include="Utility\Matrix3x2Extensions.cs" />
+    <Compile Include="Utility\StringExtensions.cs" />
+    <Compile Include="Utility\RectExtensions.cs" />
+    <Compile Include="Utility\MathUtility.cs" />
+    <Compile Include="Functions\FunctionData.cs" />
+    <Compile Include="Functions\FunctionManager.cs" />
+    <Compile Include="Utility\NotifyingObject.cs" />
+    <Compile Include="Controls\EditCommandBar.xaml.cs">
+      <DependentUpon>EditCommandBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GraphView.xaml.cs">
+      <DependentUpon>GraphView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\TaskExtensions.cs" />
+    <Compile Include="Utility\ValueSetExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\contrast-black\LargeTile.scale-100.png" />
+    <Content Include="Assets\contrast-black\LargeTile.scale-200.png" />
+    <Content Include="Assets\contrast-black\LargeTile.scale-400.png" />
+    <Content Include="Assets\contrast-black\SplashScreen.scale-100.png" />
+    <Content Include="Assets\contrast-black\SplashScreen.scale-200.png" />
+    <Content Include="Assets\contrast-black\SplashScreen.scale-400.png" />
+    <Content Include="Assets\contrast-black\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\contrast-black\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\contrast-black\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\contrast-black\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\contrast-black\Square71x71Logo.scale-100.png" />
+    <Content Include="Assets\contrast-black\Square71x71Logo.scale-200.png" />
+    <Content Include="Assets\contrast-black\Square71x71Logo.scale-400.png" />
+    <Content Include="Assets\contrast-black\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\contrast-black\Wide310x150Logo.scale-200.png" />
+    <Content Include="Assets\contrast-black\Wide310x150Logo.scale-400.png" />
+    <Content Include="Assets\contrast-white\LargeTile.scale-100.png" />
+    <Content Include="Assets\contrast-white\LargeTile.scale-200.png" />
+    <Content Include="Assets\contrast-white\LargeTile.scale-400.png" />
+    <Content Include="Assets\contrast-white\SplashScreen.scale-100.png" />
+    <Content Include="Assets\contrast-white\SplashScreen.scale-200.png" />
+    <Content Include="Assets\contrast-white\SplashScreen.scale-400.png" />
+    <Content Include="Assets\contrast-white\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\contrast-white\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\contrast-white\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\contrast-white\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\contrast-white\Square71x71Logo.scale-100.png" />
+    <Content Include="Assets\contrast-white\Square71x71Logo.scale-200.png" />
+    <Content Include="Assets\contrast-white\Square71x71Logo.scale-400.png" />
+    <Content Include="Assets\contrast-white\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\contrast-white\Wide310x150Logo.scale-200.png" />
+    <Content Include="Assets\contrast-white\Wide310x150Logo.scale-400.png" />
+    <Content Include="Assets\LargeTile.scale-100.png" />
+    <Content Include="Assets\LargeTile.scale-200.png" />
+    <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-400.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\Square71x71Logo.scale-100.png" />
+    <Content Include="Assets\Square71x71Logo.scale-200.png" />
+    <Content Include="Assets\Square71x71Logo.scale-400.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-125.png" />
+    <Content Include="Assets\StoreLogo.scale-150.png" />
+    <Content Include="Assets\StoreLogo.scale-200.png" />
+    <Content Include="Assets\StoreLogo.scale-400.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="Properties\Default.rd.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Controls\AboutControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ColorControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DeleteConfirmationDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\FunctionLabel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Graph\CoordinateControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Graph\FunctionGraph.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\EditCommandBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GraphView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FunctionInterpreter">
+      <Version>0.1.7</Version>
+    </PackageReference>
+    <PackageReference Include="HockeySDK.UWP">
+      <Version>4.1.6</Version>
+    </PackageReference>
+    <PackageReference Include="MathNet.Numerics">
+      <Version>3.20.2</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.1.7</Version>
+    </PackageReference>
+    <PackageReference Include="Win2D.uwp">
+      <Version>1.23.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '15.0' ">
+    <VisualStudioVersion>15.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,49 @@
+﻿<UserControl
+    x:Class="Quadrant.Controls.AboutControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Pivot x:Uid="AboutPivot">
+        <PivotItem x:Uid="CopyrightPivotItem">
+            <StackPanel>
+                <TextBlock
+                    x:Uid="CreatedBy"
+                    FontWeight="SemiBold"
+                    Margin="0,0,0,2"/>
+                <TextBlock
+                    x:Uid="Copyright"
+                    TextWrapping="WrapWholeWords"
+                    Margin="0,0,0,2"/>
+                <TextBlock Text="{x:Bind AppVersion}" />
+                <HyperlinkButton
+                    x:Uid="RateButton"
+                    Click="RateButtonClickAsync"/>
+            </StackPanel>
+        </PivotItem>
+
+        <PivotItem x:Uid="PrivacyPivotItem">
+            <StackPanel>
+                <TextBlock
+                    x:Uid="PrivacyPolicy"
+                    TextWrapping="WrapWholeWords"/>
+                <ToggleSwitch
+                    x:Uid="TelemetryToggleSwitch"
+                    Margin="0,20,0,0"
+                    IsOn="{x:Bind IsTelemetryEnabled, Mode=TwoWay}"/>
+            </StackPanel>
+        </PivotItem>
+
+        <PivotItem x:Uid="ThirdPartyPivotItem">
+            <TextBlock TextWrapping="WrapWholeWords">
+                <Span>
+                    <Run x:Uid="MathNetName" FontWeight="SemiBold"/>
+                    <LineBreak/>
+                    <Run x:Uid="MathNet"/>
+                    <LineBreak />
+                    <LineBreak />
+                    <Run x:Uid="MITLicense"/>
+                </Span>
+            </TextBlock>
+        </PivotItem>
+    </Pivot>
+</UserControl>

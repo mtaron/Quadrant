@@ -1,0 +1,21 @@
+﻿<UserControl
+    x:Class="Quadrant.Controls.ColorControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Width="256">
+
+    <Grid>
+        <ColorPicker
+            Width="{x:Bind Width}"
+            MinWidth="{x:Bind Width}"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            ColorSpectrumShape="Ring"
+            IsColorChannelTextInputVisible="False"
+            IsAlphaEnabled="False"
+            IsColorPreviewVisible="False"
+            IsHexInputVisible="False"
+            ColorChanged="ColorPicker_ColorChanged"
+            Color="{x:Bind Function.Color, Mode=TwoWay}"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,52 @@
+﻿<UserControl
+    x:Class="Quadrant.Graph.CoordinateControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    AutomationProperties.Name="{x:Bind CoordTextBlock.Text, Mode=OneWay, TargetNullValue='x,y'}">
+    <UserControl.Resources>
+        <x:Double x:Key="CircleSize">10</x:Double>
+    </UserControl.Resources>
+    
+    <StackPanel Orientation="Horizontal">
+        <Grid
+            x:Name="CirlceHost"
+            Margin="0,0,16,0"
+            VerticalAlignment="Center"
+            Width="{StaticResource CircleSize}"
+            Height="{StaticResource CircleSize}">
+            <Ellipse Fill="{x:Bind Background, Mode=OneWay}" />
+            <Ellipse StrokeThickness="0.5">
+                <Ellipse.Stroke>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#26000000" Offset="1"/>
+                        <GradientStop Color="#4CFFFFFF"/>
+                    </LinearGradientBrush>
+                </Ellipse.Stroke>
+            </Ellipse>
+        </Grid>
+        <Grid
+            x:Name="TextGrid"
+            VerticalAlignment="Center"
+            MinWidth="40">
+            <Grid x:Name="TranslationElement">
+                <Rectangle
+                    x:Name="ShadowSource"
+                    Stroke="{ThemeResource ShadowSourceBrush}"
+                    StrokeThickness="1"/>
+                <Border
+                    Background="{ThemeResource SystemControlAltHighAcrylicElementBrush}"
+                    BorderBrush="{x:Bind Background, Mode=OneWay}"
+                    BorderThickness="1">
+                    <TextBlock
+                        x:Name="CoordTextBlock"
+                        FontSize="18"
+                        Margin="4,0,4,0"
+                        HorizontalAlignment="Center"
+                        TextAlignment="Center"
+                        Foreground="{ThemeResource GraphForegroundBrush}" />
+                </Border>
+            </Grid>
+        </Grid>
+    </StackPanel>
+
+</UserControl>
