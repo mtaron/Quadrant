@@ -1,22 +1,25 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.HockeyApp;
+using Microsoft.AppCenter.Crashes;
 
 namespace Quadrant.Utility
 {
     internal static class TaskExtensions
     {
-        public static void TrackExceptions(this Task task)
+        public static Task TrackExceptions(this Task task, CancellationToken cancelationToken)
         {
-            task.ContinueWith(t =>
-            {
-                AggregateException exceptions = t.Exception.Flatten();
-                foreach (Exception exception in exceptions.InnerExceptions)
+            return task.ContinueWith(t =>
                 {
-                    HockeyClient.Current.TrackException(exception);
-                }
-            },
-            TaskContinuationOptions.OnlyOnFaulted);
+                    AggregateException exceptions = t.Exception.Flatten();
+                    foreach (Exception exception in exceptions.InnerExceptions)
+                    {
+                        Crashes.TrackError(exception);
+                    }
+                },
+                cancelationToken,
+                TaskContinuationOptions.OnlyOnFaulted,
+                TaskScheduler.Default);
         }
     }
 }

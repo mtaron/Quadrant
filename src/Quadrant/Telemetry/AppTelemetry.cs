@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Threading;
 using MathNet.Numerics.Statistics;
-using Microsoft.HockeyApp;
-using Microsoft.HockeyApp.DataContracts;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 using Windows.Storage;
 
 namespace Quadrant.Telemetry
@@ -21,7 +23,7 @@ namespace Quadrant.Telemetry
         {
             if (IsEnabled)
             {
-                HockeyClient.Current.Configure("837863c54ceb421380026282688dd7c8");
+                AppCenter.Start("837863c5-4ceb-4213-8002-6282688dd7c8", typeof(Analytics), typeof(Crashes));
             }
         }
 
@@ -88,12 +90,7 @@ namespace Quadrant.Telemetry
             }
 
             _loadStopwatch.Stop();
-            if (IsEnabled)
-            {
-                var telemetry = new MetricTelemetry(TelemetryMetrics.Load, _loadStopwatch.ElapsedMilliseconds);
-                SetCommonProperties(telemetry.Properties);
-                HockeyClient.Current.TrackMetric(telemetry);
-            }
+            TrackEvent(TelemetryMetrics.Load, "Value", _loadStopwatch.ElapsedMilliseconds);
             _loadStopwatch = null;
         }
 
@@ -101,8 +98,7 @@ namespace Quadrant.Telemetry
         {
             if (IsEnabled)
             {
-                EventTelemetry eventTelemetry = CreateEventTelemetry(eventName);
-                HockeyClient.Current.TrackEvent(eventTelemetry);
+                TrackEvent(eventName, properties: null);
             }
         }
 
@@ -110,13 +106,16 @@ namespace Quadrant.Telemetry
         {
             if (IsEnabled)
             {
-                EventTelemetry eventTelemetry = CreateEventTelemetry(eventName);
-                eventTelemetry.Properties.Add(propertyName, propertyValue);
-                HockeyClient.Current.TrackEvent(eventTelemetry);
+                var properties = new Dictionary<string, string>()
+                {
+                    { propertyName, propertyValue }
+                };
+
+                TrackEvent(eventName, properties);
             }
         }
 
-        public void TrackEvent(string eventName, string propertyName, bool propertyValue)
+        public void TrackEvent(string eventName, string propertyName, object propertyValue)
         {
             TrackEvent(eventName, propertyName, propertyValue.ToString());
         }
@@ -128,10 +127,13 @@ namespace Quadrant.Telemetry
         {
             if (IsEnabled)
             {
-                EventTelemetry eventTelemetry = CreateEventTelemetry(eventName);
-                eventTelemetry.Properties.Add(propertyNameOne, propertyValueOne);
-                eventTelemetry.Properties.Add(propertyNameTwo, propertyValueTwo);
-                HockeyClient.Current.TrackEvent(eventTelemetry);
+                var properties = new Dictionary<string, string>()
+                {
+                    { propertyNameOne, propertyValueOne },
+                    { propertyNameTwo, propertyValueTwo }
+                };
+
+                TrackEvent(eventName, properties);
             }
         }
 
@@ -159,15 +161,12 @@ namespace Quadrant.Telemetry
                     RunningStatistics statistics = metric.Value;
                     if (statistics.Count > 0)
                     {
-                        MetricTelemetry metrics = CreateMetricTelemetry(metric.Key, statistics);
-                        HockeyClient.Current.TrackMetric(metrics);
+                        TrackMetricTelemetry(metric.Key, statistics);
                     }
                 }
 
                 _metrics.Clear();
             }
-
-            HockeyClient.Current.Flush();
         }
 
         private void TrackMetric(string metricName, double value)
@@ -184,39 +183,36 @@ namespace Quadrant.Telemetry
             }
         }
 
-        private EventTelemetry CreateEventTelemetry(string eventName)
+        private void TrackMetricTelemetry(string metricName, RunningStatistics statistics)
         {
-            var telemetry = new EventTelemetry(eventName);
-            SetCommonProperties(telemetry.Properties);
-            return telemetry;
-        }
-
-        private MetricTelemetry CreateMetricTelemetry(string metricName, RunningStatistics statistics)
-        {
-            var telemetry = new MetricTelemetry()
+            var properties = new Dictionary<string, string>()
             {
-                Name = metricName,
-                Count = (int)statistics.Count,
-                Value = statistics.Mean,
-                Max = statistics.Maximum,
-                Min = statistics.Minimum
+                { "Count", statistics.Count.ToString(CultureInfo.InvariantCulture) },
+                { "Mean", statistics.Mean.ToString(CultureInfo.InvariantCulture) },
+                { "Max", statistics.Maximum.ToString(CultureInfo.InvariantCulture) },
+                { "Min", statistics.Minimum.ToString(CultureInfo.InvariantCulture) },
             };
 
             if (statistics.Count >= 2)
             {
-                telemetry.StandardDeviation = statistics.StandardDeviation;
+                properties.Add("StandardDeviation", statistics.StandardDeviation.ToString(CultureInfo.InvariantCulture));
             }
 
-            SetCommonProperties(telemetry.Properties);
-
-            return telemetry;
+            TrackEvent(metricName, properties);
         }
 
-        private void SetCommonProperties(IDictionary<string, string> properties)
+        private void TrackEvent(string name, IDictionary<string, string> properties)
         {
 #if DEBUG
+            if (properties == null)
+            {
+                properties = new Dictionary<string, string>(capacity: 1);
+            }
+
             properties.Add(TelemetryProperties.IsDebug, "true");
 #endif
+
+            Analytics.TrackEvent(name, properties);
         }
 
         private sealed class SupressionToken : IDisposable

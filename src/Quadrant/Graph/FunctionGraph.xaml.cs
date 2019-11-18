@@ -958,10 +958,11 @@ namespace Quadrant.Graph
             }
             else
             {
-                RunOnUIThreadAsync(() =>
-                {
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-                }).TrackExceptions();
+                using var source = new CancellationTokenSource();
+                _ = RunOnUIThreadAsync(() =>
+                    {
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+                    }).TrackExceptions(source.Token);
             }
         }
 
