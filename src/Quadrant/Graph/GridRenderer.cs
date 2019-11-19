@@ -29,7 +29,7 @@ namespace Quadrant.Graph
             double halfInterval = interval / 2;
             double x = transform.Left - (transform.Left % halfInterval);
             bool isLabelLine = Math.IEEERemainder(x, interval).AlmostEqual(0);
-            for (; x <= transform.Right - (transform.Right % halfInterval); x = x + halfInterval)
+            for (; x <= transform.Right - (transform.Right % halfInterval); x += halfInterval)
             {
                 if (x.AlmostEqual(0))
                 {
@@ -57,7 +57,7 @@ namespace Quadrant.Graph
             halfInterval = interval / 2;
             double y = transform.Top - (transform.Top % halfInterval);
             isLabelLine = Math.IEEERemainder(y, interval).AlmostEqual(0);
-            for (; y >= transform.Bottom - (transform.Bottom % halfInterval); y = y - halfInterval)
+            for (; y >= transform.Bottom - (transform.Bottom % halfInterval); y -= halfInterval)
             {
                 if (y.AlmostEqual(0))
                 {
