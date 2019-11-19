@@ -243,7 +243,6 @@ namespace Quadrant
             }
 
             ConnectedAnimationService animationService = ConnectedAnimationService.GetForCurrentView();
-
             _functionBarAnimation = compositor.CreateAnimationGroup();
             
             ScalarKeyFrameAnimation offsetAnimation = compositor.CreateScalarKeyFrameAnimation();

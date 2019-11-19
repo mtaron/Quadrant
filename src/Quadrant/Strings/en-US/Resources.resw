@@ -277,7 +277,7 @@ This string is followed by a bulleted list of the additionals functions that wil
     <comment>Label for the about menu item in the "more" menu.</comment>
   </data>
   <data name="Copyright.Text" xml:space="preserve">
-    <value>Copyright © 2017-2018 Michael Taron – All rights reserved</value>
+    <value>Copyright © 2017-2019 Michael Taron – All rights reserved</value>
     <comment>Copyright text for Quadrant</comment>
   </data>
   <data name="DarkTheme" xml:space="preserve">
