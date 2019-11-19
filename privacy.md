@@ -7,6 +7,6 @@ Example data collection and use:
  * Function input and parse results are used to determine if the function parser is working correctly.
  * Crash logs are used to find and fix crashes.
 
-All data is collected and stored securely using Microsoft's [HockeyApp](https://hockeyapp.net/) service. HockeyApp's privacy policy may be found [here](https://privacy.microsoft.com/en-us/PrivacyStatement). Information is not shared with any other third party.
+All data is collected and stored securely using Microsoft's [Visual Studio App Center](https://docs.microsoft.com/en-us/appcenter/) service. Microsoft's privacy policy may be found [here](https://privacy.microsoft.com/en-us/PrivacyStatement). Information is not shared with any other third party.
 
 For any questions regarding this policy, please contact support@quadrantapp.com.
