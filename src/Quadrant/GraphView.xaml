@@ -150,6 +150,7 @@
             x:Name="InkTools"
             x:Load="False"
             Grid.Row="1"
+            Background="{StaticResource AppBarToggleButtonBackgroundChecked}"
             HorizontalAlignment="Left"
             Visibility="Collapsed"
             ButtonFlyoutPlacement="Top"
@@ -322,14 +323,14 @@
                 </AppBarButton>
                 <AppBarButton
                     x:Uid="AboutButton"
-                    AccessKey="A">
+                    AccessKey="A"
+                    Click="AboutButton_Click">
                     <AppBarButton.Icon>
                         <FontIcon Glyph="&#xE946;" />
                     </AppBarButton.Icon>
-                    <AppBarButton.Flyout>
+                    <FlyoutBase.AttachedFlyout>
                         <Flyout
                             Placement="Full"
-                            Opening="AboutFlyoutOpening"
                             LightDismissOverlayMode="On"
                             AllowFocusOnInteraction="True">
                             <Flyout.FlyoutPresenterStyle>
@@ -343,7 +344,7 @@
                             </Flyout.FlyoutPresenterStyle>
                             <qc:AboutControl x:Name="About" x:Load="False" AutomationProperties.AccessibilityView="Raw"/>
                         </Flyout>
-                    </AppBarButton.Flyout>
+                    </FlyoutBase.AttachedFlyout>
                 </AppBarButton>
             </CommandBar.SecondaryCommands>
 
