@@ -47,7 +47,6 @@ namespace Quadrant.Graph
             typeof(FunctionGraph),
             new PropertyMetadata(false, InkInputOnlyChanged));
 
-        private readonly object _syncObject = new object();
         private readonly CoreDispatcher _dispatcher;
         private readonly Transform _transform = new Transform();
 

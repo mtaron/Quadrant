@@ -9,7 +9,6 @@ namespace Quadrant.Persistence
     internal class SuspensionManager
     {
         private const string LastSessionIdSettingName = "LastSessionId";
-        private const string LegacySuspensionName = "SuspensionData";
         private static readonly StorageFolder SuspensionDataFolder = ApplicationData.Current.LocalCacheFolder;
 
         private readonly string _sessionId;

@@ -77,7 +77,7 @@ namespace Quadrant.Graph
             var printer = new GraphPrinter(graph);
 
             // Show the print UI, with the print manager connected to us.
-            PrintManager printManager = PrintManager.GetForCurrentView();
+            var printManager = PrintManager.GetForCurrentView();
             printManager.PrintTaskRequested += printer.PrintTaskRequested;
 
             return PrintManager.ShowPrintUIAsync().AsTask();
@@ -95,7 +95,7 @@ namespace Quadrant.Graph
                 createPrintTaskArgs.SetSource(_printDocument);
             });
 
-            PrintTaskOptionDetails printDetailedOptions = PrintTaskOptionDetails.GetFromPrintTaskOptions(printTask.Options);
+            var printDetailedOptions = PrintTaskOptionDetails.GetFromPrintTaskOptions(printTask.Options);
             CreateGraphOptions(printDetailedOptions);
 
             printDetailedOptions.OptionChanged += PrintDetailedOptions_OptionChanged;
@@ -153,7 +153,7 @@ namespace Quadrant.Graph
         private void PrintDocument_PrintTaskOptionsChanged(CanvasPrintDocument sender, CanvasPrintTaskOptionsChangedEventArgs args)
         {
             PrintPageDescription pageDesc = args.PrintTaskOptions.GetPageDescription(1);
-            Vector2 newPageSize = pageDesc.PageSize.ToVector2();
+            var newPageSize = pageDesc.PageSize.ToVector2();
 
             if (_pageSize == newPageSize)
             {
@@ -172,7 +172,7 @@ namespace Quadrant.Graph
         private void PrintDocument_Preview(CanvasPrintDocument sender, CanvasPreviewEventArgs args)
         {
             PrintTaskOptions options = args.PrintTaskOptions;
-            PrintTaskOptionDetails printDetailedOptions = PrintTaskOptionDetails.GetFromPrintTaskOptions(options);
+            var printDetailedOptions = PrintTaskOptionDetails.GetFromPrintTaskOptions(options);
             Rect imageableRect = GetImageableRect(options, args.PageNumber);
             GraphSize size = GetOptionValue<GraphSize>(printDetailedOptions);
             LabelLocation labelLocation = GetOptionValue<LabelLocation>(printDetailedOptions);
@@ -182,7 +182,7 @@ namespace Quadrant.Graph
         private void PrintDocument_Print(CanvasPrintDocument sender, CanvasPrintEventArgs args)
         {
             PrintTaskOptions options = args.PrintTaskOptions;
-            PrintTaskOptionDetails printDetailedOptions = PrintTaskOptionDetails.GetFromPrintTaskOptions(options);
+            var printDetailedOptions = PrintTaskOptionDetails.GetFromPrintTaskOptions(options);
             Rect imageableRect = GetImageableRect(options, pageNumber: 1);
             GraphSize size = GetOptionValue<GraphSize>(printDetailedOptions);
             LabelLocation labelLocation = GetOptionValue<LabelLocation>(printDetailedOptions);
@@ -252,21 +252,16 @@ namespace Quadrant.Graph
         private static Vector2 GetLabelLocation(LabelLocation labelLocation, Rect textLayoutBounds, Size canvasSize)
         {
             const float offset = 15;
-            switch (labelLocation)
+            return labelLocation switch
             {
-                case LabelLocation.TopLeft:
-                    return new Vector2(offset, offset);
-                case LabelLocation.TopRight:
-                    return new Vector2((float)canvasSize.Width - (float)textLayoutBounds.Width - offset, offset);
-                case LabelLocation.BottomLeft:
-                    return new Vector2(offset, (float)canvasSize.Height - (float)textLayoutBounds.Height - offset);
-                case LabelLocation.BottomRight:
-                    return new Vector2(
+                LabelLocation.TopLeft => new Vector2(offset, offset),
+                LabelLocation.TopRight => new Vector2((float)canvasSize.Width - (float)textLayoutBounds.Width - offset, offset),
+                LabelLocation.BottomLeft => new Vector2(offset, (float)canvasSize.Height - (float)textLayoutBounds.Height - offset),
+                LabelLocation.BottomRight => new Vector2(
                         (float)canvasSize.Width - (float)textLayoutBounds.Width - offset,
-                        (float)canvasSize.Height - (float)textLayoutBounds.Height - offset);
-                default:
-                    throw new InvalidOperationException($"Unexpected LabelLocation {labelLocation}.");
-            }
+                        (float)canvasSize.Height - (float)textLayoutBounds.Height - offset),
+                _ => throw new InvalidOperationException($"Unexpected LabelLocation {labelLocation}."),
+            };
         }
 
         private static Rect GetImageableRect(PrintTaskOptions options, uint pageNumber)
