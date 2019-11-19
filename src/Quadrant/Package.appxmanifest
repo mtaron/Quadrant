@@ -5,7 +5,7 @@
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
   xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5"
   IgnorableNamespaces="uap uap5 mp">
-  <Identity Name="30267MichaelTaron.Quadrant" Publisher="CN=A9E9A2E1-B6BA-42B2-A9AA-6E4D254D1CD1" Version="1.2.0.0" />
+  <Identity Name="30267MichaelTaron.Quadrant" Publisher="CN=A9E9A2E1-B6BA-42B2-A9AA-6E4D254D1CD1" Version="1.3.0.0" />
   <mp:PhoneIdentity PhoneProductId="7933f642-84b1-4dbd-bcac-6b00be2e48f1" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>ms-resource:AppName</DisplayName>

@@ -133,6 +133,7 @@ namespace Quadrant.Controls
             _entranceAnimation = ConnectedAnimationService.GetForCurrentView().GetAnimation(GraphView.BeginEditAnimationName);
             if (_entranceAnimation != null)
             {
+                _entranceAnimation.Configuration = new DirectConnectedAnimationConfiguration();
                 InputEnterStoryboard.Begin();
                 _entranceAnimation.TryStart(FunctionLabel);
             }
@@ -176,7 +177,7 @@ namespace Quadrant.Controls
             }).ConfigureAwait(false);
         }
 
-        private void FinishEdit(bool isDelete)
+        private void FinishEdit()
         {
             Window.Current.CoreWindow.KeyDown -= CoreWindow_KeyDown;
             SystemNavigationManager.GetForCurrentView().BackRequested -= OnBackRequested;
@@ -249,7 +250,7 @@ namespace Quadrant.Controls
                 FunctionManager.Compile();
             }
 
-            FinishEdit(isDelete);
+            FinishEdit();
             AppTelemetry.Current.TrackEvent(TelemetryEvents.CancelEdit);
         }
 
@@ -282,14 +283,14 @@ namespace Quadrant.Controls
         private async void ClickDeleteButtonAsync(object sender, RoutedEventArgs e)
         {
             await FunctionManager.DeleteFunctionAsync(Function);
-            FinishEdit(isDelete: true);
+            FinishEdit();
         }
 
         private void Accept()
         {
             if (Validate())
             {
-                FinishEdit(isDelete: false);
+                FinishEdit();
             }
         }
 
@@ -357,7 +358,7 @@ namespace Quadrant.Controls
             }
             else if (Validate(args.QueryText))
             {
-                FinishEdit(isDelete: false);
+                FinishEdit();
             }
         }
 

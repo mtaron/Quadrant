@@ -24,6 +24,7 @@ using Windows.UI.Core;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Hosting;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
@@ -187,7 +188,7 @@ namespace Quadrant
             EditBar.Function = function;
         }
 
-        private void OnEditCompleted(FunctionData function)
+        private void OnEditCompleted()
         {
             UpdateFunctions();
             Graph.SetStrokes(null);
@@ -244,7 +245,7 @@ namespace Quadrant
             ConnectedAnimationService animationService = ConnectedAnimationService.GetForCurrentView();
 
             _functionBarAnimation = compositor.CreateAnimationGroup();
-
+            
             ScalarKeyFrameAnimation offsetAnimation = compositor.CreateScalarKeyFrameAnimation();
             offsetAnimation.Target = "Offset.x";
             offsetAnimation.InsertKeyFrame(0, -5.0f);
@@ -308,6 +309,29 @@ namespace Quadrant
             await Launcher.LaunchUriAsync(FeedbackUri).AsTask().ConfigureAwait(false);
         }
 
+        private void AboutButton_Click(object sender, RoutedEventArgs e)
+        {
+            var element = sender as FrameworkElement;
+            if (element == null)
+            {
+                return;
+            }
+
+            FlyoutBase flyout = FlyoutBase.GetAttachedFlyout(element);
+            if (flyout == null)
+            {
+                return;
+            }
+
+            if (About == null)
+            {
+                FindName(nameof(About));
+            }
+
+            flyout.ShowAt(this);
+            AppTelemetry.Current.TrackEvent(TelemetryEvents.AboutButton);
+        }
+
         private void FunctionList_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (!(e.ClickedItem is FunctionData function))
@@ -330,7 +354,7 @@ namespace Quadrant
         }
 
         private void EditBar_EditComplete(object sender, FunctionDataEventArgs e)
-            => OnEditCompleted(e.Function);
+            => OnEditCompleted();
 
         private Flyout GetColorFlyout()
             => ColorFlyout ?? (Flyout)FindName(nameof(ColorFlyout));
@@ -418,16 +442,6 @@ namespace Quadrant
         {
             DataTransferManager.ShowShareUI();
             AppTelemetry.Current.TrackEvent(TelemetryEvents.ShareButton);
-        }
-
-        private void AboutFlyoutOpening(object sender, object e)
-        {
-            if (About == null)
-            {
-                FindName(nameof(About));
-            }
-
-            AppTelemetry.Current.TrackEvent(TelemetryEvents.AboutButton);
         }
 
         private async void OnLoaded(object sender, RoutedEventArgs e)

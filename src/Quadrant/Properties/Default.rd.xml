@@ -17,8 +17,6 @@
 
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
   <Application>
-    <!-- Required by HockeyApp -->
-    <Type Name="Quadrant.App" Browse="Required Public" />
 
   </Application>
 </Directives>
